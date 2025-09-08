@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geração Tech</title>
+  <meta name="description" content="Portal de entrada para estudantes do ensino médio no universo da programação e da lógica." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💻</text></svg>">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --text: #f1f5f9;
+      --accent: #38bdf8;
+      --card: #1e293b;
+      --muted: #94a3b8;
+    }
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --text: #0f172a;
+      --accent: #0284c7;
+      --card: #e2e8f0;
+      --muted: #475569;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      position:fixed; top:0; left:0; width:100%; z-index:50;
+      background: var(--bg); border-bottom:1px solid var(--card);
+    }
+    nav {
+      display:flex; justify-content:space-between; align-items:center;
+      max-width:1000px; margin:auto; padding:1rem;
+    }
+    nav a {
+      color:var(--text); margin-left:1rem; text-decoration:none; font-weight:500;
+    }
+    nav a.active { color:var(--accent); }
+    .theme-toggle { cursor:pointer; font-size:1.2rem; }
+    main { padding-top:80px; }
+    section { padding:4rem 1rem; max-width:1000px; margin:auto; }
+    .hero {
+      text-align:center; padding:6rem 1rem; background:linear-gradient(135deg,var(--accent),purple);
+      color:white; border-radius:1rem; margin-bottom:2rem;
+    }
+    .hero h1 { font-size:2.5rem; margin-bottom:1rem; }
+    .hero p { font-size:1.2rem; }
+    .section-title { font-size:2rem; margin-bottom:1rem; color:var(--accent); }
+    .section-sub { margin-bottom:2rem; color:var(--muted); }
+    .card {
+      background:var(--card); padding:1.5rem; border-radius:1rem; margin-bottom:1.5rem;
+      box-shadow:0 2px 6px rgba(0,0,0,0.2);
+    }
+    .resources { display:grid; gap:1rem; }
+    .resources a { color: var(--accent); font-weight:600; text-decoration:none; }
+    footer { text-align:center; padding:2rem; color:var(--muted); font-size:0.9rem; }
+    pre {
+      background:var(--card); padding:1rem; border-radius:0.5rem; overflow-x:auto;
+    }
+    code { color:var(--accent); }
+    button {
+      background:var(--accent); color:white; border:none; padding:0.6rem 1rem; border-radius:0.5rem;
+      cursor:pointer; margin-top:0.5rem;
+    }
+    button:hover { opacity:0.9; }
+    @media (max-width:600px) {
+      nav { flex-wrap:wrap; }
+      nav a { margin:0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><strong>💻 Geração Tech</strong></div>
+      <div>
+        <a href="#oque" class="nav-link">O que é</a>
+        <a href="#porque" class="nav-link">Por que</a>
+        <a href="#passos" class="nav-link">Primeiros passos</a>
+        <a href="#projetos" class="nav-link">Projetos</a>
+        <a href="#recursos" class="nav-link">Recursos</a>
+        <span class="theme-toggle">🌙</span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Geração Tech: Sua Aventura Começa Aqui!</h1>
+      <p>Portal de entrada para o universo fascinante da programação e da lógica 🚀</p>
+    </section>
+
+    <section id="oque">
+      <h2 class="section-title">O que é Programação?</h2>
+      <p class="section-sub">É como aprender uma nova língua para conversar com as máquinas.</p>
+      <div class="card">
+        <p>Programar é dar instruções a um computador e transformar ideias em realidade digital! 💡</p>
+      </div>
+    </section>
+
+    <section id="porque">
+      <h2 class="section-title">Por que Aprender a Programar?</h2>
+      <p class="section-sub">Raciocínio lógico, resolução criativa de problemas e inovação.</p>
+      <div class="card">
+        <p>Essas habilidades são valiosas em QUALQUER carreira e te dão poder de criar coisas incríveis!</p>
+      </div>
+    </section>
+
+    <section id="passos">
+      <h2 class="section-title">Primeiros Passos: Desvendando a Lógica!</h2>
+      <p class="section-sub">Comece com pseudocódigo e programação em blocos.</p>
+      <div class="card">
+        <h3>Pseudocódigo</h3>
+        <pre><code>INÍCIO
+  PEDIR ao usuário para digitar seu nome
+  LER o nome digitado
+  MOSTRAR "Olá, " + nome + "! Bem-vindo(a) ao mundo da programação!"
+FIM</code></pre>
+        <button onclick="runPseudo()">Executar</button>
+        <p id="output"></p>
+      </div>
+      <div class="card">
+        <h3>Programação em Blocos</h3>
+        <p>Forma visual e intuitiva de montar programas arrastando blocos de comando.</p>
+        <button onclick="alert('Experimente o Scratch em: https://scratch.mit.edu')">Ver exemplo</button>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <h2 class="section-title">Projetos Inspiradores</h2>
+      <p class="section-sub">Veja o que jovens como você já criaram!</p>
+      <div class="card"><p>Jogos educativos, ferramentas escolares e soluções para a comunidade ✨</p></div>
+    </section>
+
+    <section id="recursos">
+      <h2 class="section-title">Recursos úteis</h2>
+      <p class="section-sub">Tutoriais, cursos gratuitos e comunidades para continuar aprendendo.</p>
+      <div class="resources">
+        <div class="card resource">
+          <a href="https://escolakoru.com.br/blog/post/algoritmos-e-logica-de-programacao-o-que-voce-precisa-saber" target="_blank">Guia de Lógica & Algoritmos</a>
+          <p class="muted">Conceitos essenciais com exemplos simples para começar.</p>
+        </div>
+        <div class="card resource">
+          <a href="https://developer.mozilla.org/pt-BR/docs/Learn" target="_blank">HTML, CSS e JavaScript</a>
+          <p class="muted">Aprenda a construir páginas e interações para a web.</p>
+        </div>
+        <div class="card resource">
+          <a href="https://discord.gg/frontendbr" target="_blank">Comunidades para estudantes</a>
+          <p class="muted">Faça perguntas, compartilhe projetos e receba feedback.</p>
+        </div>
+        <div class="card resource">
+          <a href="https://www.beecrowd.com.br/judge/pt/login" target="_blank">Desafios práticos</a>
+          <p class="muted">Pratique com desafios curtos e divertidos para fixar o aprendizado.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito com ♥ para estudantes do ensino médio. — <span id="year"></span> • Desbravadores do Código</p>
+  </footer>
+
+  <script>
+    // Alternar tema claro/escuro
+    const toggle = document.querySelector('.theme-toggle');
+    toggle.addEventListener('click', () => {
+      const theme = document.body.getAttribute('data-theme');
+      if(theme === 'light'){ document.body.removeAttribute('data-theme'); toggle.textContent = '🌙'; localStorage.setItem('theme','dark'); }
+      else { document.body.setAttribute('data-theme','light'); toggle.textContent = '☀️'; localStorage.setItem('theme','light'); }
+    });
+    if(localStorage.getItem('theme')==='light'){ document.body.setAttribute('data-theme','light'); toggle.textContent='☀️'; }
+
+    // Scroll suave e link ativo
+    const links = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        const top = window.scrollY;
+        if(top >= sec.offsetTop - 100){ current = sec.getAttribute('id'); }
+      });
+      links.forEach(link => { link.classList.remove('active'); if(link.getAttribute('href')==='#'+current){ link.classList.add('active'); } });
+    });
+
+    // Pseudocódigo -> execução simples
+    function runPseudo(){
+      const nome = prompt('Digite seu nome:');
+      if(nome){ document.getElementById('output').textContent = 'Olá, ' + nome + '! Bem-vindo(a) ao mundo da programação!'; }
+    }
+
+    // Ano automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
